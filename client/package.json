@@ -1,0 +1,25 @@
+{
+  "name": "client",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "npx concurrently \"npm:start:react\" \"npm:watch:sass\"",
+    "build:docker": "npx concurrently \"npm:build:react:docker\" \"npm:build:sass\"",
+    "build:local": "npx concurrently \"npm:build:react:local\" \"npm:build:sass\"",
+    "start:react": "env-cmd -f .env/.env react-scripts start",
+    "build:react:docker": "env-cmd -f .env/.env.production react-scripts build",
+    "build:react:local": "env-cmd -f .env/.env.production.local react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:sass": "npx sass src/assets/sass/main.sass src/assets/styles/main.css --style=expanded --no-source-map",
+    "watch:sass": "npm run build:sass -- -w"
+  },
+  "dependencies": {
+    "env-cmd": "^10.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.1",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.1"
+  }
+}

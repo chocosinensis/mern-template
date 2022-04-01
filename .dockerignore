@@ -1,0 +1,14 @@
+# npm
+**/node_modules
+**/package-lock.json
+
+# development
+/logs
+/tests
+**/.*
+**/*.md
+/client/build
+/client/firebase.json
+!/.gitignore
+!/client/.env/.env
+!/client/.env/.env.production

@@ -1,0 +1,7 @@
+{
+  "ignore": [
+    "/client/**",
+    "/tests/**"
+  ],
+  "ext": "js,json,env"
+}

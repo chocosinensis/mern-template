@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: ../../
+      dockerfile: config/.docker/Dockerfile
+    external_links:
+      - db
+    networks:
+      - app
+  db:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - 'data:/data/db'
+    networks:
+      - app
+
+volumes:
+  data:
+
+networks:
+  app:

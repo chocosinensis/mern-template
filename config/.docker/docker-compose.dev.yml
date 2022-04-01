@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app:
+    build:
+      args:
+        NODE_ENV: development
+    ports:
+      - '3000:3000'
+      - '4000:4000'
+    env_file:
+      - ../.env/.env.dev
+    volumes:
+      - ../../app:/usr/src/app/app
+      - ../../client:/usr/src/app/client
+      - ../../config/src:/usr/src/app/config/src
+      - ../../config/public:/usr/src/app/config/public
+    command: npm run serve

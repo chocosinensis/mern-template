@@ -1,0 +1,7 @@
+**/.*
+**/*.md
+!/.gitignore
+/config/nodemon.json
+
+/client
+/tests
