@@ -10,3 +10,8 @@ generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["mongoDb"]
 }
+
+model Sus {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  type String
+}

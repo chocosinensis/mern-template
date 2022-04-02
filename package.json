@@ -9,12 +9,12 @@
     "serve": "npx concurrently \"npm:serve:*\"",
     "serve:api": "npx nodemon --config config/nodemon.json",
     "serve:client": "npm start --prefix client --unsafe-perm",
-    "prep": "npx concurrently \"npm:prep:*\"",
+    "prep": "npx concurrently \"npm:prep:*\" \"npm:env:*\"",
     "prep:i": "npx concurrently \"npm i\" \"npm i --prefix client\"",
-    "prep:env": "npx concurrently \"npm:prep:env:*\"",
-    "prep:env:api": "cat ./config/.env/.env.example > ./config/.env/.env",
-    "prep:env:client": "echo \"REACT_APP_URL={{api_url}}\" > ./client/.env/.env.production.local",
-    "prep:prettier": "mkdir .vscode && echo \"{ \\\"prettier.configPath\\\": \\\"config/.prettierrc\\\" }\" > .vscode/settings.json"
+    "prep:prettier": "mkdir .vscode && echo \"{ \\\"prettier.configPath\\\": \\\"config/.prettierrc\\\" }\" > .vscode/settings.json",
+    "env:api": "cat ./config/.env/.env.example > ./config/.env/.env",
+    "env:prisma": "cat ./config/prisma/.env.example > .config/prisma/.env",
+    "env:client": "echo \"REACT_APP_URL={{api_url}}\" > ./client/.env/.env.production.local"
   },
   "keywords": [],
   "license": "ISC",
